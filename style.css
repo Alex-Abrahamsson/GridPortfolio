@@ -1,0 +1,122 @@
+body
+{
+    background-color: rgb(34, 34, 34);
+    color: gray;
+}
+hr
+{
+    color: #29f5c5;
+    background-color: #29f5c5;
+    height: 4px;
+    width: 25%;
+    text-align: left;
+    margin-left: 0px;
+    border-width: 0px;
+}
+h1
+{
+    color: white;
+    margin-bottom: 0px;
+}
+i
+{
+    margin-top: 10px;
+    color: #29F5C5;
+}
+h2
+{
+    margin: 0px;
+}
+
+
+.myContainer 
+{
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 2px;
+}
+.profilePic 
+{
+    grid-column: 1;
+    grid-row: 1;
+}
+.factsRight 
+{
+    margin-left: 20px;
+}
+.facts 
+{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.profile 
+{
+    grid-column: 1;
+    grid-row: 3;
+}
+.techSkills
+{
+    grid-column: 1;
+    grid-row: 4;
+}
+.techSkills2 
+{
+    display: flex;
+    flex-direction: row;
+}
+  
+.skillsLeft
+{
+    margin-right: 5%;
+    margin-top: 2%;
+    font-size: 15px;
+}
+.dot
+{
+    margin-left: 8px;
+    margin-top: 14px;
+    height: 11px;
+    width: 11px;
+    background-color: #3b3b3b;
+    border-radius: 50%;
+    display: inline-block;
+}
+.greenDot 
+{
+    margin-left: 8px;
+    margin-top: 14px;
+    height: 11px;
+    width: 11px;
+    background-color: #29f5c5;
+    border-radius: 50%;
+    display: inline-block;
+}
+.experience 
+{
+    grid-column: 1;
+    grid-row: 5;
+}
+.education
+{
+    grid-column: 1;
+    grid-row:6;
+}
+.interests 
+{
+    grid-column: 1;
+    grid-row: 7;
+}
+.references
+{
+    grid-column: 1;
+    grid-row: 8;
+}
+.socials 
+{
+    grid-column: 1;
+    grid-row: 9;
+}
