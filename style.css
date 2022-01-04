@@ -1,3 +1,33 @@
+html 
+{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  /*overflow-y: hidden;*/
+}
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track 
+{
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 30px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0009;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
 body
 {
     background-color: rgb(34, 34, 34);
@@ -26,6 +56,12 @@ i
 h2
 {
     margin: 0px;
+    color: rgb(136, 136, 136);
+}
+h3
+{
+    color: white;
+    margin-left: 15%;
 }
 
 
@@ -43,7 +79,7 @@ h2
 }
 .factsRight 
 {
-    margin-left: 20px;
+    margin-left: 10%;
 }
 .facts 
 {
@@ -71,7 +107,8 @@ h2
   
 .skillsLeft
 {
-    margin-right: 5%;
+    margin-right: 10%;
+    letter-spacing: 2px;
     margin-top: 2%;
     font-size: 15px;
 }
