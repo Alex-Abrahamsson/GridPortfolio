@@ -1,18 +1,16 @@
-html 
-{
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   /*overflow-y: hidden;*/
 }
-    /* width */
-    ::-webkit-scrollbar {
-      width: 1px;
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
 }
 
 /* Track */
-::-webkit-scrollbar-track 
-{
+::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 30px;
 }
@@ -27,133 +25,236 @@ html
 ::-webkit-scrollbar-thumb:hover {
   background: black;
 }
-
-body
-{
-    background-color: rgb(34, 34, 34);
-    color: gray;
-}
-hr
-{
-    color: #29f5c5;
-    background-color: #29f5c5;
-    height: 4px;
-    width: 25%;
-    text-align: left;
-    margin-left: 0px;
-    border-width: 0px;
-}
-h1
-{
-    color: white;
-    margin-bottom: 0px;
-}
-i
-{
-    margin-top: 10px;
-    color: #29F5C5;
-}
-h2
-{
-    margin: 0px;
-    color: rgb(136, 136, 136);
-}
-h3
-{
-    color: white;
-    margin-left: 15%;
+section {
+  scroll-snap-align: start;
 }
 
+@keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
 
-.myContainer 
-{
-    max-width: 400px;
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    gap: 2px;
+@-moz-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
 }
-.profilePic 
-{
-    grid-column: 1;
-    grid-row: 1;
+
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
 }
-.factsRight 
-{
-    margin-left: 10%;
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  cursor: crosshair;
 }
-.facts 
-{
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+
+.stars {
+  background: black
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: 0;
 }
-.profile 
-{
-    grid-column: 1;
-    grid-row: 3;
+
+.twinkling {
+  width: 10000px;
+  height: 100%;
+  background: transparent
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png")
+    repeat;
+  background-size: 1000px 1000px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+
+  -moz-animation: move-background 70s linear infinite;
+  -ms-animation: move-background 70s linear infinite;
+  -o-animation: move-background 70s linear infinite;
+  -webkit-animation: move-background 70s linear infinite;
+  animation: move-background 70s linear infinite;
 }
-.techSkills
-{
-    grid-column: 1;
-    grid-row: 4;
+
+.clouds {
+  width: 10000px;
+  height: 100%;
+  background: transparent
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png")
+    repeat;
+  background-size: 1000px 1000px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+
+  -moz-animation: move-background 150s linear infinite;
+  -ms-animation: move-background 150s linear infinite;
+  -o-animation: move-background 150s linear infinite;
+  -webkit-animation: move-background 150s linear infinite;
+  animation: move-background 150s linear infinite;
 }
-.techSkills2 
-{
-    display: flex;
-    flex-direction: row;
+.mine {
+  color: white;
+  z-index: 4;
+  position: absolute;
+  text-align: center;
+  height: 20vh;
+  width: 99vw;
+  top: 40%;
 }
-  
-.skillsLeft
-{
-    margin-right: 10%;
-    letter-spacing: 2px;
-    margin-top: 2%;
-    font-size: 15px;
+.mine i {
+  font-size: 18px;
+  color: darkgray;
 }
-.dot
-{
-    margin-left: 8px;
-    margin-top: 14px;
-    height: 11px;
-    width: 11px;
-    background-color: #3b3b3b;
-    border-radius: 50%;
-    display: inline-block;
+
+img {
+  height: 30vh;
+  width: 30vh;
+  position: absolute;
+  z-index: 3;
+  right: 5px;
 }
-.greenDot 
-{
-    margin-left: 8px;
-    margin-top: 14px;
-    height: 11px;
-    width: 11px;
-    background-color: #29f5c5;
-    border-radius: 50%;
-    display: inline-block;
+
+body {
+  background-color: rgb(34, 34, 34);
+  color: gray;
 }
-.experience 
-{
-    grid-column: 1;
-    grid-row: 5;
+hr {
+  color: #29f5c5;
+  background-color: #29f5c5;
+  height: 4px;
+  width: 25%;
+  text-align: left;
+  margin-left: 0px;
+  border-width: 0px;
 }
-.education
-{
-    grid-column: 1;
-    grid-row:6;
+h1 {
+  color: white;
+  margin-bottom: 0px;
 }
-.interests 
-{
-    grid-column: 1;
-    grid-row: 7;
+i {
+  margin-top: 10px;
+  color: #29f5c5;
 }
-.references
-{
-    grid-column: 1;
-    grid-row: 8;
+h2 {
+  margin: 0px;
+  margin-bottom: 25px;
+  color: rgb(136, 136, 136);
 }
-.socials 
-{
-    grid-column: 1;
-    grid-row: 9;
+h3 {
+  color: white;
+  margin-left: 15%;
+  margin-bottom: 0px;
+  margin-top: 4px;
+}
+
+.myContainer {
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2px;
+}
+.profilePic {
+  grid-column: 1;
+  grid-row: 1;
+}
+.factsRight {
+  margin-left: 10%;
+}
+.facts {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.profile {
+  grid-column: 1;
+  grid-row: 3;
+}
+.techSkills {
+  grid-column: 1;
+  grid-row: 4;
+}
+.techSkills2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.skillsLeft {
+  margin-right: 10%;
+  letter-spacing: 2px;
+  margin-top: 2%;
+  font-size: 15px;
+}
+.dot {
+  margin-left: 8px;
+  margin-top: 14px;
+  height: 11px;
+  width: 11px;
+  background-color: #3b3b3b;
+  border-radius: 50%;
+  display: inline-block;
+}
+.greenDot {
+  margin-left: 8px;
+  margin-top: 14px;
+  height: 11px;
+  width: 11px;
+  background-color: #29f5c5;
+  border-radius: 50%;
+  display: inline-block;
+}
+.experience {
+  grid-column: 1;
+  grid-row: 5;
+}
+.education {
+  grid-column: 1;
+  grid-row: 6;
+}
+.interests {
+  grid-column: 1;
+  grid-row: 7;
+}
+.references {
+  grid-column: 1;
+  grid-row: 8;
+}
+.socials {
+  grid-column: 1;
+  grid-row: 9;
 }
